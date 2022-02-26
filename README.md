@@ -1,1 +1,0 @@
-# aloush_bot
