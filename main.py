@@ -1,141 +1,141 @@
-import requests,user_agent,json,flask,telebot,random,os,sys
-import telebot
-from telebot import types
+import os
+lib = input("""
+[1] Download lib & update
+[2] pass
+
+[+] Please Choice >> """)
+
+if lib == "1":
+    os.system('pip install requests')
+    os.system('pip install user_agent')
+    os.system('cls' if os.name == 'nt' else 'clear')
+    pass
+else:
+    os.system('cls' if os.name == 'nt' else 'clear')
+    pass
+
+import requests
+import random
+import secrets
+from time import sleep
 from user_agent import generate_user_agent
-import logging
-from config import *
-from flask import Flask, request
 
-bot = telebot.TeleBot(BOT_TOKEN)
-server = Flask(__name__)
-logger = telebot.logger
-logger.setLevel(logging.DEBUG)
+banner = ("""
+[!] Free By : @TESH DZ Telegram""")
+print(banner)
+print('====================================')
 
+def Make():
+    while 1:
+        idd    = 'X5uC6wALAAF-Lw3oSZE9kuY0mP_9'
+        r      = requests.Session()
+        cookie = secrets.token_hex(8)*2
+        chars  = 'abcdefghijklmnopqrstuvwxyz123456789'
+        myID   = input('[+] Enter Your Telegram ID : ')
+        if myID == "":
+            print('[!] Error Telegram ID')
+            exit()
+        else:
+            token   = input('[+] Enter token Bot Telegram : ')
+            pass
+        phone  = input('[+] Enter Your Phone Number : ')
+        if phone == "":
+            print('[!] Error Phone Number')
+            exit()
+        else:
+            pass
+        userr  = ""
+        passs  = ""
+        for x in range(0,3):
+            userr_char = random.choice(chars)
+            userr      = userr + userr_char
+        for i in range(0,8):
+            passs_char = random.choice(chars)
+            passs      = passs + passs_char   
+        paas   = passs
+        user   = (f'smahi{userr}')
+        name   = 'By @crackingdzz'
+        url1   = 'https://www.instagram.com/accounts/web_create_ajax/attempt/'
+        url2   = 'https://www.instagram.com/accounts/send_signup_sms_code_ajax/'
+        url3   = 'https://www.instagram.com/accounts/web_create_ajax/'
+        head   = {
+            'HOST': "www.instagram.com",
+            'KeepAlive' : 'True',
+            'user-agent' : generate_user_agent(),
+            'Cookie': cookie,
+            'Accept' : "*/*",
+            'ContentType' : "application/x-www-form-urlencoded",
+            "X-Requested-With" : "XMLHttpRequest",
+            "X-IG-App-ID": "936619743392459",
+            "X-Instagram-AJAX" : "missing",
+            "X-CSRFToken" : "missing",
+            "Accept-Language" : "en-US,en;q=0.9"
+        }
 
-@bot.message_handler(commands=['start'])
-def boten(message):
-	
-    
-    
-    mas = types.InlineKeyboardMarkup(row_width=2)
-    
-    A = types.InlineKeyboardButton(text ="USER (BFFFL)", callback_data="F1")
-    
-    E = types.InlineKeyboardButton(text ="USER (BFFF2)", callback_data="F2")
-    
-    M = types.InlineKeyboardButton('المطور', url='https://t.me/SidraTools')
-    
-    mas.add(A,E,M)
-    
-    bot.send_message(message.chat.id, f"- أهلاً بكً  !\n\n- بوت تشكير يوزرات تلجرام 🧑‍💻\n\n♻️ لوحة التحكم الخاصه بك ♨️",reply_markup=mas)
-    
-    
-@bot.callback_query_handler(func=lambda call: True)
-def masg(call):
-	
-	
-	global nam
-	
-	if call.data =="SidraTools":
-		
-		mas = types.InlineKeyboardMarkup(row_width=2)
-		
-		A = types.InlineKeyboardButton(text ="USER (BFFFL)", callback_data="F1")
-
-		E = types.InlineKeyboardButton(text ="USER (BFFF2)", callback_data="F2")
-		
-		M = types.InlineKeyboardButton('المطور', url='https://t.me/SidraTools')
-		
-		M = types.InlineKeyboardButton('المطور', url='https://t.me/SidraTools')
-		
-		bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id, text="- أهلاً بكً عزيزي المستخدم \n\n- بوت تشكير يوزرات تلجرام 🧑‍💻\n\n♻️ لوحة التحكم الخاصه بك ♨️",reply_markup=mas)
-
-	elif call.data =="F1":
-		
-		xu = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		xn = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		xa = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		ok=0
-		cp=0
-		sk=0
-		while True:
-			us = str(''.join(random.choice(xu)for i in range(1)))
-			un = str(''.join(random.choice(xn)for i in range(1)))
-			ua = str(''.join(random.choice(xa)for i in range(1)))
-			username = str(us)+str(un)+str(un)+str(un)+str(ua)
-			url = "https://t.me/"+str(username)
-			headers = {
-            "User-Agent": generate_user_agent(),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language" : "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"}
-			response = requests.get(url, headers=headers)
-			if response.text.find('If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"')>=0:
-				ok+=1
-				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ᴜѕᴇʀɴᴀᴍᴇ ᴛᴇʟᴇɢʀᴀᴍ  ✓\n────── • ✧✧ • ──────\n‹ ᴜѕᴇʀɴᴀᴍᴇ : @{username}\n────── • ✧✧ • ──────\n• @SidraTools")
-				
-			else:
-				cp+=1
-				sk+=1
-				mas = types.InlineKeyboardMarkup(row_width=2)
-				A = types.InlineKeyboardButton(f'GOOD : {ok}',callback_data="1x")
-				E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
-				B = types.InlineKeyboardButton(f'{username}', callback_data="1x")
-				R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
-				M = types.InlineKeyboardButton('المطور', url='https://t.me/SidraTools')
-				mas.add(A,E,B,R,M)
-				bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="ok start",reply_markup=mas)
-				
-			
-		
-		
-	elif call.data =="F2":
-		
-		xu = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		xn = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		xa = "MNBVCXZLKJHGFDSAPOIUYTREWQ"
-		xm = "0987654321"
-		ok=0
-		cp=0
-		sk=0
-		while True:
-			us = str(''.join(random.choice(xu)for i in range(1)))
-			un = str(''.join(random.choice(xn)for i in range(1)))
-			ua = str(''.join(random.choice(xa)for i in range(1)))
-			bs = str(''.join(random.choice(xm)for i in range(1))) 
-			username = str(us)+str(un)+str(un)+str(un)+str(bs)
-			url = "https://t.me/"+str(username)
-			headers = {
-            "User-Agent": generate_user_agent(),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language" : "ar-EG,ar;q=0.9,en-US;q=0.8,en;q=0.7"}
-			response = requests.get(url, headers=headers)
-			if response.text.find('If you have <strong>Telegram</strong>, you can contact <a class="tgme_username_link"')>=0:
-				ok+=1
-				sk+=1
-				bot.send_message(call.message.chat.id,f"‹ ᴜѕᴇʀɴᴀᴍᴇ ᴛᴇʟᴇɢʀᴀᴍ  ✓\n────── • ✧✧ • ──────\n‹ ᴜѕᴇʀɴᴀᴍᴇ : @{username}\n────── • ✧✧ • ──────\n• @SidraTools")
-				
-			else:
-				cp+=1
-				sk+=1
-				mas = types.InlineKeyboardMarkup(row_width=2)
-				A = types.InlineKeyboardButton(f'GOOD : {ok}', callback_data="1x")
-				E = types.InlineKeyboardButton(f'EROR : {cp}', callback_data="1x")
-				B = types.InlineKeyboardButton(f'{username}', callback_data="1x")
-				R = types.InlineKeyboardButton(f'{sk}', callback_data="1x")
-				M = types.InlineKeyboardButton('المطور', url='https://t.me/SidraTools')
-				mas.add(A,E,B,R,M)
-				bot.edit_message_text(chat_id=call.message.chat.id,message_id=call.message.message_id,text="ok start",reply_markup=mas)
-		
-
-@server.route(f"/{BOT_TOKEN}", methods=["POST"])
-def redirect_message():
-    json_string = request.get_data().decode("utf-8")
-    update = telebot.types.Update.de_json(json_string)
-    bot.process_new_updates([update])
-    return "!", 200
+        data1   = {
+            'enc_password': '#PWD_INSTAGRAM_BROWSER:0:1589682409:{}'.format(paas),
+            'phone_number': phone,
+            'username': user,
+            'first_name': name,
+            'month': '1',
+            'day': '1',
+            'year': '1999',
+            'client_id': idd,
+            'seamless_login_enabled': '1',
+            'opt_into_one_tap': 'fals'
+        }
+        data2   = {
+            'client_id': idd,
+            'phone_number': phone,
+            'phone_id': '',
+            'big_blue_token': ''
+        }
+        Make_Acc1 = r.post(url1,headers=head,data=data1)
+        Make_Acc2 = r.post(url2,headers=head,data=data2)
+        if 'Looks like your phone number may be incorrect.' in Make_Acc2.text:
+            print('[!] Error Phone Number')
+            exit()
+        elif 'Please wait a few minutes before you try again.' in Make_Acc2.text:
+            print('[!] Please wait a few Minutes')
+            exit()
+        elif 'true' in Make_Acc2.text:
+            print('[-] The SMS has been sent successfully')
+            pass
+        else:
+            print('[!] Error ..')
+            exit()
+        code = input('[+] Enter The Code : ')
+        data3 = {
+            'enc_password': '#PWD_INSTAGRAM_BROWSER:0:1589682409:{}'.format(paas),
+            'phone_number': phone,
+            'username': user,
+            'first_name': name,
+            'month': '1',
+            'day': '1',
+            'year': '1999',
+            'sms_code': code,
+            'client_id': idd,
+            'seamless_login_enabled': '1',
+            'tos_version': 'row'
+        }
+        Make_Acc3 = r.post(url3,headers=head,data=data3)
+        if "That code isn't valid." in Make_Acc3.text:
+            print("[!] That code isn't valid")
+            exit()
+        elif 'true' in Make_Acc3.text:
+            print("[-] Done Created Account")
+            pass
+        elif "checkpoint_required" in Make_Acc3.text:
+            print('[!] Done, checkpoint required')
+            pass
+        else:
+            print(Make_Acc3.text)
+            print('[!] Error ..')
+            exit()
+        Account = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&text=⌯ Instagram Fake Account  \n⌯ User : {}\n⌯ Pass : {}\n⌯ Ch : @crackingdzz'.format(token,myID,user,paas)
+        r.get(Account)
+Make()
+#Coded by @V_7_U
 
 if __name__ == "__main__":
     bot.remove_webhook()
